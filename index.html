@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Union TV - Felype</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    header {
+      background: #e60000;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    section {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .planos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .plano {
+      background: #1c1c1c;
+      border: 2px solid #e60000;
+      padding: 20px;
+      border-radius: 10px;
+      width: 280px;
+      transition: 0.3s;
+    }
+
+    .plano:hover {
+      transform: scale(1.05);
+      background: #2a2a2a;
+    }
+
+    .plano h2 {
+      font-size: 1.8rem;
+      color: #e60000;
+    }
+
+    .preco {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    ul li {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+
+    .btn {
+      background: #e60000;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      .planos {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>UNION TV - Felype</h1>
+    <p>IPTV + P2P com estabilidade, qualidade e o melhor preço!</p>
+  </header>
+
+  <section>
+    <h2>Escolha seu plano:</h2>
+
+    <div class="planos">
+      <div class="plano">
+        <h2>Plano 1 Tela</h2>
+        <p class="preco">R$25/mês</p>
+        <ul>
+          <li>✔ 1 tela simultânea</li>
+          <li>✔ Qualidade HD/Full HD</li>
+          <li>✔ Canais, filmes e séries</li>
+          <li>✔ Suporte via WhatsApp</li>
+        </ul>
+        <a href="https://wa.me/seunumerodowhatsapp" class="btn" target="_blank">Assinar agora</a>
+      </div>
+
+      <div class="plano">
+        <h2>Plano 2 Telas</h2>
+        <p class="preco">R$45/mês</p>
+        <ul>
+          <li>✔ 2 telas simultâneas</li>
+          <li>✔ Qualidade HD/Full HD</li>
+          <li>✔ Canais, filmes e séries</li>
+          <li>✔ Suporte via WhatsApp</li>
+        </ul>
+        <a href="https://wa.me/seunumerodowhatsapp" class="btn" target="_blank">Assinar agora</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Union TV - Desenvolvido por Felype. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
