@@ -6,34 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Union TV</title>
   <style>
+    :root {
+      --cor-laranja: #ff7c00; /* Laranja da logo */
+      --cor-preto: #0d0d0d;  /* Preto do fundo */
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #111;
+      background: var(--cor-preto);
       color: #fff;
     }
+
     header {
-      background: #e60000;
+      background: var(--cor-laranja);
       padding: 20px;
       text-align: center;
     }
+
     header h1 {
       margin: 0;
       font-size: 2.5rem;
     }
+
     section {
       padding: 30px 20px;
       text-align: center;
     }
+
     .video-container {
       max-width: 800px;
       margin: 0 auto 40px auto;
     }
+
     .video-container video {
       width: 100%;
       border-radius: 10px;
-      border: 3px solid #e60000;
+      border: 3px solid var(--cor-laranja);
     }
+
     .planos {
       display: flex;
       flex-wrap: wrap;
@@ -41,38 +52,45 @@
       gap: 30px;
       margin-top: 30px;
     }
+
     .plano {
-      background: #1c1c1c;
-      border: 2px solid #e60000;
+      background: #1a1a1a;
+      border: 2px solid var(--cor-laranja);
       padding: 20px;
       border-radius: 10px;
       width: 280px;
       transition: 0.3s;
     }
+
     .plano:hover {
       transform: scale(1.05);
-      background: #2a2a2a;
+      background: #262626;
     }
+
     .plano h2 {
       font-size: 1.8rem;
-      color: #e60000;
+      color: var(--cor-laranja);
     }
+
     .preco {
       font-size: 2rem;
       font-weight: bold;
       margin: 15px 0;
     }
+
     ul {
       list-style: none;
       padding: 0;
       text-align: left;
     }
+
     ul li {
       margin: 10px 0;
       font-size: 1rem;
     }
+
     .btn {
-      background: #e60000;
+      background: var(--cor-laranja);
       color: white;
       padding: 10px 20px;
       margin-top: 15px;
@@ -82,7 +100,32 @@
       text-decoration: none;
       font-weight: bold;
       display: inline-block;
+      transition: background 0.3s;
     }
+
+    .btn:hover {
+      background: #e66a00;
+    }
+
+    .btn-teste {
+      background: transparent;
+      border: 2px solid var(--cor-laranja);
+      color: var(--cor-laranja);
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+
+    .btn-teste:hover {
+      background: var(--cor-laranja);
+      color: #000;
+    }
+
     footer {
       background: #000;
       text-align: center;
@@ -90,6 +133,7 @@
       font-size: 0.9rem;
       color: #aaa;
     }
+
     @media (max-width: 600px) {
       .planos {
         flex-direction: column;
@@ -108,10 +152,16 @@
     <!-- Vídeo -->
     <div class="video-container">
       <video controls>
-        <source src="4946699596176079105.mp4" type="video/mp4">
+        <source src="videos/meuvideo.mp4" type="video/mp4">
         Seu navegador não suporta vídeo HTML5.
       </video>
     </div>
+
+    <!-- Botão Teste Grátis -->
+    <a href="https://wa.me/5581981880490?text=Olá%2C%20gostaria%20de%20um%20teste%20grátis%20de%206%20horas%20da%20Union%20TV." 
+       class="btn-teste" target="_blank">
+      🎁 Teste Grátis
+    </a>
 
     <h2>Escolha seu plano:</h2>
 
@@ -125,7 +175,10 @@
           <li>✔ Canais, filmes e séries</li>
           <li>✔ Suporte via WhatsApp</li>
         </ul>
-        <a href="https://wa.me/5581981880490?text=Olá%2C%20gostaria%20de%20um%20teste%20do%20plano%20de%20R%2425." class="btn" target="_blank">Assinar agora</a>
+        <a href="https://wa.me/5581981880490?text=Olá%2C%20gostaria%20de%20um%20teste%20do%20plano%20de%20R%2425." 
+           class="btn" target="_blank">
+          Assinar agora
+        </a>
       </div>
 
       <div class="plano">
@@ -137,7 +190,10 @@
           <li>✔ Canais, filmes e séries</li>
           <li>✔ Suporte via WhatsApp</li>
         </ul>
-        <a href="https://wa.me/5581981880490?text=Olá%2C%20gostaria%20de%20um%20teste%20do%20plano%20de%20R%2445." class="btn" target="_blank">Assinar agora</a>
+        <a href="https://wa.me/5581981880490?text=Olá%2C%20gostaria%20de%20um%20teste%20do%20plano%20de%20R%2445." 
+           class="btn" target="_blank">
+          Assinar agora
+        </a>
       </div>
     </div>
   </section>
