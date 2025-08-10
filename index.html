@@ -5,146 +5,172 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Union TV - Felype</title>
   <style>
-    :root {
-      --cor-laranja: #ff7c00; /* Laranja da logo */
-      --cor-preto: #0d0d0d;  /* Preto do fundo */
-    }
+   :root {
+  --cor-laranja: #ff7c00;
+  --cor-laranja-claro: #ffa94d;
+  --cor-preto: #0d0d0d;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--cor-preto);
-      color: #fff;
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
+  color: #fff;
+  overflow-x: hidden;
+}
 
-    header {
-      background: var(--cor-preto);
-      padding: 20px;
-      text-align: center;
-    }
+header {
+  padding: 20px;
+  text-align: center;
+  animation: fadeInDown 1s ease-in-out;
+}
 
-    header img {
-      max-width: 220px;
-      height: auto;
-    }
+header img {
+  max-width: 220px;
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(255, 124, 0, 0.5));
+  transition: transform 0.3s;
+}
 
-    header p {
-      margin: 10px 0 0 0;
-      font-size: 1.1rem;
-      color: var(--cor-laranja);
-    }
+header img:hover {
+  transform: scale(1.05);
+}
 
-    section {
-      padding: 30px 20px;
-      text-align: center;
-    }
+header p {
+  margin: 10px 0 0 0;
+  font-size: 1.1rem;
+  color: var(--cor-laranja);
+}
 
-    .video-container {
-      max-width: 800px;
-      margin: 0 auto 40px auto;
-    }
+section {
+  padding: 30px 20px;
+  text-align: center;
+}
 
-    .video-container video {
-      width: 100%;
-      border-radius: 10px;
-      border: 3px solid var(--cor-laranja);
-    }
+.video-container {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  animation: fadeIn 1.2s ease-in-out;
+}
 
-    .planos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-    }
+.video-container video {
+  width: 100%;
+  border-radius: 10px;
+  border: 3px solid var(--cor-laranja);
+  box-shadow: 0 0 15px rgba(255, 124, 0, 0.5);
+}
 
-    .plano {
-      background: #1a1a1a;
-      border: 2px solid var(--cor-laranja);
-      padding: 20px;
-      border-radius: 10px;
-      width: 280px;
-      transition: 0.3s;
-    }
+.planos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
 
-    .plano:hover {
-      transform: scale(1.05);
-      background: #262626;
-    }
+.plano {
+  background: #1a1a1a;
+  border: 2px solid var(--cor-laranja);
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  animation: fadeInUp 1s ease-in-out;
+}
 
-    .plano h2 {
-      font-size: 1.8rem;
-      color: var(--cor-laranja);
-    }
+.plano:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: #262626;
+  box-shadow: 0 0 25px rgba(255, 124, 0, 0.6);
+}
 
-    .preco {
-      font-size: 2rem;
-      font-weight: bold;
-      margin: 15px 0;
-    }
+.plano h2 {
+  font-size: 1.8rem;
+  color: var(--cor-laranja);
+}
 
-    ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-    }
+.preco {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
 
-    ul li {
-      margin: 10px 0;
-      font-size: 1rem;
-    }
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
 
-    .btn {
-      background: var(--cor-laranja);
-      color: white;
-      padding: 10px 20px;
-      margin-top: 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      transition: background 0.3s;
-    }
+ul li {
+  margin: 10px 0;
+  font-size: 1rem;
+}
 
-    .btn:hover {
-      background: #e66a00;
-    }
+.btn, .btn-teste {
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
 
-    .btn-teste {
-      background: transparent;
-      border: 2px solid var(--cor-laranja);
-      color: var(--cor-laranja);
-      padding: 10px 20px;
-      margin-top: 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      transition: all 0.3s;
-    }
+.btn {
+  background: linear-gradient(90deg, var(--cor-laranja), var(--cor-laranja-claro));
+  color: white;
+  border: none;
+}
 
-    .btn-teste:hover {
-      background: var(--cor-laranja);
-      color: #000;
-    }
+.btn:hover {
+  background: linear-gradient(90deg, var(--cor-laranja-claro), var(--cor-laranja));
+  transform: scale(1.05);
+}
 
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
+.btn-teste {
+  background: transparent;
+  border: 2px solid var(--cor-laranja);
+  color: var(--cor-laranja);
+}
 
-    @media (max-width: 600px) {
-      .planos {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
+.btn-teste:hover {
+  background: var(--cor-laranja);
+  color: #000;
+  transform: scale(1.05);
+}
+
+footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 50px;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInDown {
+  from {opacity: 0; transform: translateY(-40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@media (max-width: 600px) {
+  .planos {
+    flex-direction: column;
+    align-items: center;
+  }
+}
   </style>
 </head>
 <body>
