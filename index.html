@@ -14,54 +14,91 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(180deg, var(--cor-preto) 0%, #1a1a1a 100%);
+      background: #0d0d0d;
       color: #fff;
       overflow-x: hidden;
       line-height: 1.6;
     }
 
-    header {
-      padding: 20px;
-      text-align: center;
-      animation: fadeInDown 0.8s ease-in-out;
-    }
-
-    header img {
-      max-width: 180px;
-      height: auto;
-    }
-
-    header h1 {
-      font-size: 1.6rem;
-      margin-top: 10px;
-      color: var(--cor-laranja);
-    }
-
-    header p {
-      font-size: 1rem;
-      margin-top: 6px;
-      color: #ccc;
-    }
-
-    section {
-      padding: 30px 15px;
+    /* =========================
+       SEÇÃO HERO COM VÍDEO
+    ========================== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
 
-    .video-container {
-      max-width: 100%;
-      margin-bottom: 30px;
-    }
-
-    .video-container video {
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      border-radius: 10px;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      color: #fff;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+      animation: fadeInDown 0.9s ease-in-out;
+    }
+
+    .hero img {
+      max-width: 180px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: 1.8rem;
+      color: var(--cor-laranja);
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #eee;
+      margin-bottom: 20px;
+    }
+
+    .btn-teste {
+      background: transparent;
       border: 2px solid var(--cor-laranja);
+      color: var(--cor-laranja);
+      padding: 14px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .btn-teste:hover {
+      background: var(--cor-laranja);
+      color: #000;
+    }
+
+    /* =========================
+       BENEFÍCIOS
+    ========================== */
+    section {
+      padding: 40px 20px;
+      text-align: center;
+      background: #1a1a1a;
     }
 
     h2 {
-      font-size: 1.5rem;
-      margin-top: 25px;
+      font-size: 1.6rem;
+      margin-bottom: 25px;
     }
 
     .beneficios {
@@ -69,33 +106,40 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
-      margin: 25px 0;
     }
 
     .beneficio {
-      background: #1a1a1a;
+      background: #0d0d0d;
       border: 1px solid #333;
       padding: 15px;
       border-radius: 10px;
       flex: 1 1 150px;
       max-width: 200px;
-      text-align: center;
       font-size: 0.95rem;
       color: #ccc;
     }
 
-    .planos {
+    /* =========================
+       PLANOS EM CARROSSEL
+    ========================== */
+    .planos-container {
+      overflow-x: auto;
       display: flex;
-      flex-direction: column;
       gap: 20px;
-      margin-top: 25px;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 10px;
     }
 
     .plano {
-      background: #1a1a1a;
+      background: #0d0d0d;
       border: 2px solid var(--cor-laranja);
       padding: 20px;
       border-radius: 12px;
+      flex: 0 0 80%;
+      scroll-snap-align: start;
+      min-width: 280px;
+      max-width: 320px;
+      margin: auto;
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
@@ -105,7 +149,7 @@
     }
 
     .plano h2 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 10px;
       color: var(--cor-laranja);
     }
@@ -130,7 +174,7 @@
       color: #ccc;
     }
 
-    .btn, .btn-teste {
+    .btn {
       padding: 14px 22px;
       border-radius: 6px;
       font-weight: bold;
@@ -138,9 +182,6 @@
       display: inline-block;
       transition: 0.3s;
       font-size: 1rem;
-    }
-
-    .btn {
       background: linear-gradient(90deg, var(--cor-laranja), var(--cor-laranja-claro));
       color: white;
     }
@@ -149,33 +190,23 @@
       background: linear-gradient(90deg, var(--cor-laranja-claro), var(--cor-laranja));
     }
 
-    .btn-teste {
-      background: transparent;
-      border: 2px solid var(--cor-laranja);
-      color: var(--cor-laranja);
-      margin-bottom: 25px;
-    }
-
-    .btn-teste:hover {
-      background: var(--cor-laranja);
-      color: #000;
-    }
-
     /* WhatsApp */
-.whatsapp-label {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
-  color: white;
-  padding: 12px 16px;
-  border-radius: 25px;
-  font-size: 0.95rem;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  animation: pulse 2s infinite;
-  text-decoration: none;
-}
+    .whatsapp-label {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      animation: pulse 2s infinite;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.05); }
@@ -201,18 +232,6 @@
       text-decoration: underline;
     }
 
-    /* Efeito de entrada */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     @keyframes fadeInDown {
       from {opacity: 0; transform: translateY(-20px);}
       to {opacity: 1; transform: translateY(0);}
@@ -221,37 +240,39 @@
 </head>
 <body>
 
-  <header>
-    <img src="IMG_1633.png" alt="Union TV Logo">
-    <h1>Union TV - Sua Plataforma Completa de Entretenimento</h1>
-    <p>Assista filmes, séries e canais ao vivo com qualidade premium e preço acessível.</p>
-  </header>
-
-  <section>
-    <div class="video-container reveal">
-      <video autoplay muted loop playsinline>
-        <source src="4946699596176079105.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo HTML5.
-      </video>
+  <!-- HERO COM VÍDEO DE FUNDO -->
+  <div class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="4946699596176079105.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+    <div class="hero-content">
+      <img src="IMG_1633.png" alt="Union TV Logo">
+      <h1>Union TV - Sua Plataforma Completa de Entretenimento</h1>
+      <p>Filmes, séries e canais ao vivo em qualidade premium por um preço justo.</p>
+      <a href="https://wa.me/5581981880490?text=Olá%2C%20quero%20um%20teste%20grátis%20de%206%20horas%20da%20Union%20TV." class="btn-teste">
+        🎁 Teste Grátis 6h – Experimente Agora
+      </a>
     </div>
+  </div>
 
-    <a href="https://wa.me/5581981880490?text=Olá%2C%20quero%20um%20teste%20grátis%20de%206%20horas%20da%20Union%20TV." class="btn-teste reveal">
-      🎁 Teste Grátis 6h – Experimente Agora
-    </a>
-
-    <h2 class="reveal">Por que escolher a Union TV?</h2>
-    <div class="beneficios reveal">
+  <!-- BENEFÍCIOS -->
+  <section>
+    <h2>Por que escolher a Union TV?</h2>
+    <div class="beneficios">
       <div class="beneficio">📺 Mais de 10.000 filmes e séries</div>
       <div class="beneficio">⚡ Qualidade HD/Full HD sem travar</div>
       <div class="beneficio">🔐 Acesso seguro</div>
       <div class="beneficio">📱 Assista em qualquer dispositivo</div>
       <div class="beneficio">🎁 Teste grátis de 6 horas</div>
     </div>
+  </section>
 
-    <h2 class="reveal" id="planos">Planos que cabem no seu bolso:</h2>
-
-    <div class="planos">
-      <div class="plano reveal">
+  <!-- PLANOS EM CARROSSEL -->
+  <section>
+    <h2 id="planos">Planos que cabem no seu bolso:</h2>
+    <div class="planos-container">
+      <div class="plano">
         <h2>Plano 2 Telas</h2>
         <p class="preco">R$23,90/mês</p>
         <ul>
@@ -263,7 +284,7 @@
         <a href="https://wa.me/5581981880490?text=Quero%20assinar%20o%20plano%20de%202%20telas%20por%20R%2423,90." class="btn">Quero meu acesso</a>
       </div>
 
-      <div class="plano reveal">
+      <div class="plano">
         <h2>Plano 4 Telas</h2>
         <p class="preco">R$42,90/mês</p>
         <ul>
@@ -277,7 +298,7 @@
     </div>
   </section>
 
-    <!-- WhatsApp -->
+  <!-- BOTÃO FIXO WHATSAPP -->
   <a href="https://wa.me/5581981880490" class="whatsapp-label" target="_blank">
     💬 Atendimento imediato
   </a>
@@ -289,23 +310,6 @@
     <a href="https://wa.me/5581981880490">WhatsApp</a> | 
     <a href="#">Política de Uso</a>
   </footer>
-
-  <script>
-    function revealElements() {
-      const reveals = document.querySelectorAll(".reveal");
-      for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 100;
-        if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
-        }
-      }
-    }
-
-    window.addEventListener("scroll", revealElements);
-    window.addEventListener("load", revealElements);
-  </script>
 
 </body>
 </html>
